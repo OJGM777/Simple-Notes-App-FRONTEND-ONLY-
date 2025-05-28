@@ -28,6 +28,7 @@ The main tecnologies and libraries used in this version are:
   <li>FRAMER MOTION (FOR ANIMATIONS)</li>
   <li>uuid (to create id's on a simpler way)</li>
   <li>TAILWIND CSS</li>
+  <li>Moment (for Dates)</li>
 </ul>
 
 This Version also has a Settings window where you can change the font and toggle the view (light and dark mode).
