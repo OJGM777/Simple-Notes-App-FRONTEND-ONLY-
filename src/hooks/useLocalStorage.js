@@ -4,7 +4,6 @@ export function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       const item = window.localStorage.getItem(key);
-      // Si el item no existe o es null, devuelve initialValue
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       console.error("Error parsing localStorage item:", error);

@@ -50,7 +50,7 @@ const Settings = () => {
         <h4 className="text-yellow-600">STYLES</h4>
         <span className="flex  justify-between w-[98%]">
           <h4 className={`text-gray-900 dark:text-white text-lg ${fontSize}`}>
-            Tamaño de Fuente
+            Font Size
           </h4>
           <select
             onChange={(e) => fontSizes(e)}
@@ -68,7 +68,7 @@ const Settings = () => {
         </span>
         <span className="flex w-[98%] justify-between">
           <h4 className={`text-gray-900 dark:text-white text-lg ${fontSize}`}>
-            Diseño
+            Design
           </h4>
           <select
             onChange={(e) => designList(e)}
@@ -86,7 +86,7 @@ const Settings = () => {
         </span>
         <span className="flex w-[98%] justify-between">
           <h4 className={`text-gray-900 dark:text-white text-lg ${fontSize}`}>
-            vista
+            View
           </h4>
           <select
             onChange={(e) => handleOptionTheme(e)}
@@ -118,22 +118,16 @@ const Settings = () => {
           </span>
         </a>
         <a>
-          <span className={`flex  flex-col w-[94%] justify-between ${fontSize}`}>
+          <span
+            className={`flex  flex-col w-[94%] justify-between ${fontSize}`}
+          >
             <h3>what is Notes?</h3>
             <br />
             <p className="text-justify font-thin">
-              My notes app is a must-have tool for
-              keep my life organized and productive. Designed with a
-              intuitive and elegant interface, this app allows me to capture and
-              manage all my ideas, tasks and reminders in a way
-              efficient. With the option to create multiple themed notebooks,
-              I can keep my personal projects separate
+              My notes app is a must-have tool for keep my life organized and
+              productive. Designed with decent interface. With the option to
+              create multiple Notes and Tasks.
             </p>
-          </span>
-        </a>
-        <a>
-          <span className={`flex w-[94%] justify-between ${fontSize}`}>
-            <h4>® Based on NOTES App from Xiaomi</h4>
           </span>
         </a>
       </div>
