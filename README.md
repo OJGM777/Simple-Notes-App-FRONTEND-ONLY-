@@ -5,7 +5,8 @@ This is a Note app that includes a note section and a Tasks section.
 
 <b>This Web APP was made in "Mobile First", so the responsive and appearance is prioritized for Mobile devices.</b>
 
- ![Mobile 1](https://github.com/user-attachments/assets/3727bc0a-2544-4f44-a4ca-02f4ce362f3c)    ![Mobile 2](https://github.com/user-attachments/assets/bcf50702-84fb-4550-92e1-a18a55569830)
+ ![Mobile 1](https://github.com/user-attachments/assets/3727bc0a-2544-4f44-a4ca-02f4ce362f3c)    ![Mobile 2](https://github.com/user-attachments/assets/ace9440c-2ef3-4c65-abc9-976cb3d3e20f)
+
 
 
 
