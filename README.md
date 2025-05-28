@@ -1,7 +1,13 @@
 # Simple-Notes-App (FRONTEND ONLY)
 This is a Note app that includes a note section and a Tasks section.
 
-!!!!THE PORPUSE OF THIS EARLY VERSION IS TO GIVE A SIMPLER CRUD APP IN CASE THAT SOMEONE WANTS TO DOWNLOAD IT AS A SIMPLE EXAMPLE ABOUT WHAT TO DO AND NOT DO AND ALSO REFLECT MY HISTORY AND (MAYBE) IMPROVEMENT AS A DEVELOPER.
+!!!!THE PORPUSE OF THIS EARLY VERSION IS TO GIVE A SIMPLER CRUD APP IN CASE THAT SOMEONE WANTS TO DOWNLOAD IT AS A SIMPLE EXAMPLE ABOUT WHAT TO DO AND NOT DO AND ALSO REFLECT MY HISTORY AND (MAYBE) IMPROVEMENT AS A DEVELOPER.!!!!
+
+<b>This Web APP was made in "Mobile First", so the responsive and appearance is prioritized for Mobile devices.</b>
+
+ ![Mobile 1](https://github.com/user-attachments/assets/3727bc0a-2544-4f44-a4ca-02f4ce362f3c)    ![Mobile 2](https://github.com/user-attachments/assets/bcf50702-84fb-4550-92e1-a18a55569830)
+
+
 
 This version of the Notes App only has all the Frontend code, it means that this repository does not have any kind of code related to the backend, everything in this Repo is only pure front-end;
 There will be another version of this app with new tecnologies and features as:
@@ -31,7 +37,7 @@ The main tecnologies and libraries used in this version are:
   <li>uuid (to create id's on a simpler way)</li>
   <li>TAILWIND CSS</li>
   <li>MOMENT (for Dates)</li>
-  <li>REACT ICONS (for Dates)</li>
+  <li>REACT ICONS</li>
 </ul>
 
 In this project i wanted to try some new libraries, that's why i was using FRAMER MOTION, so this is my first time using this Library. I wanted to simplify the process of adding animation as fast as possible so that's why i choose this library. 
@@ -57,6 +63,8 @@ The folders section let's you change the name of the folder, create it or delete
 <h3>TASKS SECTION</h3>
 
 ![TASKS SECTION](https://github.com/user-attachments/assets/fd3124a3-c301-435b-b86f-d5e9e80ef4a8)
+
+
 
 <h3>SETTINGS SECTION</h3>
 
