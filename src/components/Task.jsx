@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { MainContext } from "../contexts/mainContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaRedo } from "react-icons/fa";
@@ -92,9 +92,6 @@ const Task = ({ task }) => {
             </div>
             <span
               className="flex gap-5 w-[98%] lg:w-[57%] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] bg-[#eae7e7] dark:bg-[#1e1d1d]  p-2 rounded-lg"
-              // onMouseEnter={() => {
-              //   setHmenu(true);
-              // }}
               onClick={(e) => {
                 handleTaskClick(e);
                 setUpdater(true);

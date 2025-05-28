@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { RiCheckboxCircleLine } from "react-icons/ri";
 import { FaLock } from "react-icons/fa";
@@ -17,8 +17,6 @@ const HeaderSelect = () => {
     settoSelectNote,
     deleteNote,
     setShowCover,
-    setShowFoldersPage,
-    showFoldersPage,
   } = useContext(MainContext);
 
   const [confirmAlert, setConfirmAlert] = useState(false);
@@ -43,10 +41,6 @@ const HeaderSelect = () => {
     }
   };
 
-  // const handleToAddNoteToFolder = (e) => {
-  //   e.preventDefault();
-  //   setShowFoldersPage(!showFoldersPage);
-  // };
 
 
 
@@ -60,7 +54,7 @@ const HeaderSelect = () => {
       >
         <button>
           <FaTimes
-            onClick={(e) => {
+            onClick={() => {
               setHmenu(!Hmenu);
               settoSelectNote([]);
             }}

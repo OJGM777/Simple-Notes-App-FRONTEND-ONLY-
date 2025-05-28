@@ -17,12 +17,12 @@ export class tasksController {
 
   static updateTask(task, id, setter, array) {
     if (!task || !id) {
-      console.log("Datos inválidos");
+      console.log("Invalid Data");
       return;
     }
     const taskIndex = array.findIndex((task) => task.id === id);
     if (taskIndex === -1) {
-      console.log("Nota no encontrada");
+      console.log("Note not Found");
       return;
     }
 
@@ -39,8 +39,6 @@ export class tasksController {
 
     setter(updatedArray);
   }
-
-  /// DARLE LOCAL STORAGEEEE
 
   static checkTask(
     task,

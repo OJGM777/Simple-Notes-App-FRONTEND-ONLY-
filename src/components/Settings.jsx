@@ -57,10 +57,10 @@ const Settings = () => {
             value={valueFont}
             className="w-36 mr-4 bg-gray-200 text-gray-500 dark:text-slate-50 dark:bg-[#181717] p-1"
           >
-            {fontOptions.map((opcion) => {
+            {fontOptions.map((option) => {
               return (
-                <option key={opcion.id} value={opcion.value}>
-                  {opcion.value}
+                <option key={option.id} value={option.value}>
+                  {option.value}
                 </option>
               );
             })}
@@ -75,10 +75,10 @@ const Settings = () => {
             value={designValue}
             className="w-36 mr-4 bg-gray-200 text-gray-500 dark:text-slate-50 dark:bg-[#181717] p-1"
           >
-            {DesignOptions.map((opcion) => {
+            {DesignOptions.map((option) => {
               return (
-                <option key={opcion.id} value={opcion.value}>
-                  {opcion.value}
+                <option key={option.id} value={option.value}>
+                  {option.value}
                 </option>
               );
             })}
@@ -93,10 +93,10 @@ const Settings = () => {
             value={theme}
             className="w-36 mr-4 bg-gray-200  text-gray-500 dark:text-slate-50 dark:bg-[#181717] p-1"
           >
-            {ViewOptions.map((opcion) => {
+            {ViewOptions.map((option) => {
               return (
-                <option key={opcion.id} value={opcion.value}>
-                  {opcion.value}
+                <option key={option.id} value={option.value}>
+                  {option.value}
                 </option>
               );
             })}

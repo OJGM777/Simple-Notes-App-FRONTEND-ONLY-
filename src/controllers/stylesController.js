@@ -48,18 +48,3 @@ export class stylesController {
 
 }
 
-// const selectedValue = event.target.value;
-// setSelectedOption(selectedValue);
-// console.log(selectedValue);
-
-// //logic to asign the color theme depending on the selected option.
-// switch (selectedValue) {
-//   case "Light":
-//     document.documentElement.classList.remove("dark");
-//     setTheme("Light");
-//     break;
-//   case "Dark":
-//     document.documentElement.classList.add("dark");
-//     setTheme("Dark");
-//     break;
-// }

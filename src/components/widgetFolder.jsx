@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FaFolder, FaPlus } from "react-icons/fa6";
+import { useContext } from "react";
+import {  FaPlus } from "react-icons/fa6";
 import { MainContext } from "../contexts/mainContext";
 import { motion } from "framer-motion";
 
@@ -37,7 +37,7 @@ const SmallFolderWidget = ({ noteID, widgetState }) => {
         {folders.length === 0 ? (
           <div className="flex flex-col items-center">
             <FaPlus
-              onClick={(e) => {
+              onClick={() => {
                 setShowCover(false);
                 setShowFRM(false);
                 setFolderView(true);

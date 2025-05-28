@@ -40,21 +40,20 @@ export class notesController {
         ...array.slice(noteIndex + 1),
       ];
   
-      // Usamos el setter para actualizar el array en el estado
       setter(updatedArray);
     }
   }
 
-  static deleteNote(arrayID, array, setter) {
-    const notesToDelete = Array.isArray(arrayID) ? arrayID : [arrayID];
+//   static deleteNote(arrayID, array, setter) {
+//     const notesToDelete = Array.isArray(arrayID) ? arrayID : [arrayID];
 
-    if (!notesToDelete.length) return Notes; 
+//     if (!notesToDelete.length) return Notes; 
 
-    const updatedNotes = array.filter(item => !notesToDelete.includes(item.id));
+//     const updatedNotes = array.filter(item => !notesToDelete.includes(item.id));
 
-    array.splice(0, array.length, ...updatedNotes)
+//     array.splice(0, array.length, ...updatedNotes)
 
-    setter(array)
-}
+//     setter(array)
+// }
 
 }

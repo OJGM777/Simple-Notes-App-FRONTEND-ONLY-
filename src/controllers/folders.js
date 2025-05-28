@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import folders from "../Data/folders.json" assert { type: "json" };
 
 export class folderController {
   static createFolder(name, setter, array) {

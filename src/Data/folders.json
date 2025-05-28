@@ -1,16 +1,16 @@
 [
     {
-        "id": "wasddasd",
+        "id": "RandomId1",
         "name": "Notes",
         "linkedNotes": []
     },
     {
-        "id": "dasdasda",
+        "id": "RandomId12",
         "name": "Documents",
         "linkedNotes": []
     },
     {
-        "id": "asdasdasdasd",
+        "id": "RandomId123",
         "name": "Projects",
         "linkedNotes": []
     }

@@ -2,7 +2,7 @@ import  { useContext } from "react";
 import { MainContext } from "../contexts/mainContext";
 
 const BTN = () => {
-  const { seeNote,seeTask, setShowCover, ShowCover, taskShow} = useContext(MainContext);
+  const { seeNote,seeTask, taskShow} = useContext(MainContext);
 
   return (
     <button

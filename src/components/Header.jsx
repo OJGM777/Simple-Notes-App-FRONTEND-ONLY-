@@ -25,11 +25,11 @@ const Header = () => {
       <header className="fixed w-screen  flex flex-col bg-white dark:bg-black text-yellow-600 z-20 rounded-[-50px 50px -50px 50px ] p-2">
         <div className="relative w-screen z-50 flex justify-between">
           <div className="btbc w-[60%] lg:w-[60%] flex justify-end gap-16 lg:gap-60  text-2xl p-2">
-            <button onClick={(e) => setTaskShow(false)}>
+            <button onClick={() => setTaskShow(false)}>
               <FaBookBookmark />
             </button>
             <button
-              onClick={(e) => {
+              onClick={() => {
                 setTaskShow(true);
                 setShowCover(false);
               }}

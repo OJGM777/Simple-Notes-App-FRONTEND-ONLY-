@@ -46,7 +46,7 @@ const ContainerAux = ({ title }) => {
         <Alerts
           handle={handleDeleteTasks}
           hide={hideAlert}
-          message={"Borrar todas las tareas? "}
+          message={"Delete All The Tasks?"}
         />
       )}
       <motion.div

@@ -33,7 +33,6 @@ const Tasks = () => {
         <motion.span
           onClick={() => {
             setContainerAux(true);
-            console.log(containerAux);
           }}
           className="flex gap-5 cursor-pointer overflow-x-hidden min-h-[58px] text-gray-800 dark:text-white bg-slate-50 dark:bg-[#262525] w-[93%] lg:w-[46%]  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] justify-between p-4  rounded-lg"
         >

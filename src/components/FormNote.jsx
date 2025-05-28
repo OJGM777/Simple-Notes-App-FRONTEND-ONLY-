@@ -19,11 +19,9 @@ const FormNote = ({ titulo, descripcion, id }) => {
     updateNote,
     deleteNote,
     setShowFRM,
-    showFRM,
     fontSize,
     folderId,
     setUpdatedInFolder,
-    showFolderNotes,
     showCover,
     setShowCover,
   } = useContext(MainContext);

@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import NoteContainer from "./components/NoteContainer";
 import FormNote from "./components/FormNote";
 import { MainContext } from "./contexts/mainContext";
-import HeaderSelect from "./components/HeaderSelect";
 import Tasks from "./components/Tasks";
 import BTN from "./components/BTN";
 import { AnimatePresence } from "framer-motion";

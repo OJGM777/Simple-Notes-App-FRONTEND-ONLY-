@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { MainContext } from "../contexts/mainContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Note = ({ note }) => {
-  const { titulo, descripcion, date, id } = note;
+  const { titulo, descripcion, date} = note;
   const {
     seeNote,
     setUpdater,
-    setHmenu,
     filtArray,
     fontSize
   } = useContext(MainContext);
@@ -25,11 +24,8 @@ const Note = ({ note }) => {
       animate={{ opacity: 1, scale: 1, transition: "0.4s" }}
       whileHover={{scale: 1.02}}
       exit={{ scale: 0 }}
-      id="noterr"
+      id="note"
       className="relative p-3 cursor-pointer bg-[#f9f4f4] lg:w-[98%] dark:bg-[#2f2e2e] shadow-[rgba(0,_0,_0,_0.24)_0px_4px_10px] text-gray-700 dark:text-[#d8d4d4] w-[100%] rounded-xl flex flex-col max-h-48"
-      // onMouseDown={(e) => {
-      //   setHmenu(true);
-      // }}
       onClick={(e) => {
         filtArray();
         handleNoteClick(e, note);

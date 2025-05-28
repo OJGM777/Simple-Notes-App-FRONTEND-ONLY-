@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Notes from "../Data/notes.json";
 import Tasks from "../Data/tasks.json";
 import Folders from "../Data/folders.json";
@@ -15,46 +15,34 @@ export const MainContext = createContext();
 export const MainContextProvider = (props) => {
   const [showFRM, setShowFRM] = useState(false);
   const [showTaskFRM, setShowTaskFRM] = useState(false);
-  const [updater, setUpdater] = useState(false); // KEEPS THE CONTAINER IN ITS CURRENT STATE AFTER A MODIFICATION
-  const [updatedInFolder, setUpdatedInFolder] = useState(false); // KEEPS THE CONTAINER IN ITS CURRENT STATE AFTER A MODIFICATION
+  const [updater, setUpdater] = useState(false);
+  const [updatedInFolder, setUpdatedInFolder] = useState(false);
   const [Hmenu, setHmenu] = useState(false);
   const [taskShow, setTaskShow] = useState(false);
   const [showCover, setShowCover] = useState(false);
   const [showFoldersPage, setShowFoldersPage] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [notes, setNotes] = useLocalStorage("Notes", Notes);
+  const [tasks, setTasks] = useLocalStorage("Tasks", Tasks);
 
-//FOLDERNOTES
+  const showFolderNotes = (btn, id) => {
+    setFolderId(id);
+    if (btn && !id) {
+      setNotesResult(notes);
+      setFolderId(id);
+      return;
+    } else {
+      const folderResult = folderController.getFolder(id, folders);
+      const folderNotes = !id
+        ? notes
+        : notes.filter((ele) => folderResult.linkedNotes.includes(ele.id));
 
-   const [notes, setNotes] = useLocalStorage("Notes", Notes);
-   const [tasks, setTasks] = useLocalStorage("Tasks", Tasks);
+      setNotesResult(folderNotes);
 
-
-//
-
- // FUNCTION THAT USEEFFECT USES TO FETCH ALL THE NOTES IN A FOLDER
-
- const showFolderNotes = (btn, id) => {
-  setFolderId(id);
-  if (btn && !id) { // "btn" IS THE BUTTON TO SHOW ALL NOTES, IF PRESSED, IT WILL DISPLAY THEM
-    setNotesResult(notes);
-    setFolderId(id);  // ASSIGNs THE ID, WHETHER IT'S DEFINED OR NOT
-    return;
-  } else {
-    const folderResult = folderController.getFolder(id, folders);
-    // if(folderResult.linkedNotes.length < 1) return;
-    const folderNotes = !id
-      ? notes
-      : notes.filter((ele) => folderResult.linkedNotes.includes(ele.id));
-
-    setNotesResult(folderNotes);
-
-    setSearch(""); // PREVENTS ANY MODIFICATION IN THE VIEW
-    return;
-  }
-};
-///
-
-   // THESE FUNCTIONS HANDLE THE RECEIVED DATA AND CREATE A TASK OR NOTE.
+      setSearch("");
+      return;
+    }
+  };
 
   const handleNote = (note) => {
     const newNote = notesController.createNote(note, setNotes, notes);
@@ -73,9 +61,6 @@ export const MainContextProvider = (props) => {
     return;
   };
 
-   // THIS FUNCTION IS CREATED TO REUSE THE NOTES FORM COMPONENT AND SHOW THE NOTE IN DETAIL OR EDIT IT.
-
-
   const [selectedNote, setSelectedNote] = useState(null);
 
   const seeNote = (note) => {
@@ -83,19 +68,17 @@ export const MainContextProvider = (props) => {
     setSelectedNote(note);
   };
 
-  // THIS FUNCTION IS CREATED TO REUSE THE TASK FORM COMPONENT AND SHOW THE TASK OR EDIT IT.
-
-
+  
 
   const seeTask = (task) => {
     setShowTaskFRM(true);
     setShowCover(true);
     setSelectedTask(task);
   };
-  const [folderId, setFolderId] = useState(""); // TO SEARCH OR KEEP THE NOTES IN THE CONTAINER AND PREVENT THE USEEFFECT FROM TRIGGERING UNNECESSARILY
+  const [folderId, setFolderId] = useState("");
 
   const updateNote = (obj, id) => {
-    const updatedNote = notesController.updateNote(obj, id, setNotes, notes);
+    notesController.updateNote(obj, id, setNotes, notes);
     if (folderId !== "") {
       setUpdatedInFolder(!updatedInFolder);
       return;
@@ -106,17 +89,16 @@ export const MainContextProvider = (props) => {
   };
 
   const updateTask = (obj, id) => {
-    const updatedTask = tasksController.updateTask(obj, id, setTasks, tasks);
-    setUpdater(!updater)
+    tasksController.updateTask(obj, id, setTasks, tasks);
+    setUpdater(!updater);
     setSelectedTask(null);
     return;
   };
 
-  const [toSelect, settoSelectNote] = useState([]); // THIS VARIABLE STORES ALL THE IDs OF NOTES TO BE DELETED, WHETHER IT'S ONE OR MULTIPLE.
-
+  const [toSelect, settoSelectNote] = useState([]);
 
   const deleteNote = (IDnotes) => {
-    const result = notesController.deleteNote(IDnotes, notes, setNotes);
+    notesController.deleteNote(IDnotes, notes, setNotes);
     if (folderId !== "") {
       setUpdatedInFolder(!updatedInFolder);
     } else {
@@ -132,14 +114,11 @@ export const MainContextProvider = (props) => {
     settoSelectNote(filteredArrays);
   };
 
-  // TO CHECK THE TASKS OR RETURN THEM TO "TASKS"
-  const [checkedTasks, setCheckedTask] = useLocalStorage("checkedTasks", '');
+  const [checkedTasks, setCheckedTask] = useLocalStorage("checkedTasks", "");
   const [containerAux, setContainerAux] = useState(false);
 
-
-
   const checkTask = (task) => {
-    const result = tasksController.checkTask(
+    tasksController.checkTask(
       task,
       setCheckedTask,
       checkedTasks,
@@ -150,36 +129,34 @@ export const MainContextProvider = (props) => {
     );
     return;
   };
-  // THIS LINE DELETES ALL THE CHECKED TASKS.
 
   const deleteAllCheckedTasks = () => {
     setCheckedTask([]);
   };
 
 
-  // FUNCTIONS FOR FOLDERS
 
   const [folders, setFolders] = useLocalStorage("Folders", Folders);
   const [folderView, setFolderView] = useState(false);
-  const [selectedFolder, setSelectedFolder] = useState(null)
+  const [selectedFolder, setSelectedFolder] = useState(null);
 
   const createFolders = (obj) => {
-    const result = folderController.createFolder(obj, setFolders, folders ); 
+    folderController.createFolder(obj, setFolders, folders);
     return;
   };
 
   const updateFolders = (obj, id) => {
     setSelectedFolder(null);
-    const result = folderController.updateFolder(obj, id, setFolders, folders)
-  }
+    folderController.updateFolder(obj, id, setFolders, folders);
+  };
 
   const deleteFolder = (id) => {
-    const result = folderController.deleteFolder(id, setFolderView, setFolders, folders);
+    folderController.deleteFolder(id, setFolderView, setFolders, folders);
     return;
   };
 
   const insertNoteInFolder = (folderId, noteId) => {
-    const result = folderController.insertNoteInFolder(folderId, noteId, setFolders, folders);
+    folderController.insertNoteInFolder(folderId, noteId, setFolders, folders);
     setUpdatedInFolder(!updatedInFolder);
     return;
   };
@@ -188,21 +165,18 @@ export const MainContextProvider = (props) => {
     setShowTaskFRM(true);
     setShowCover(true);
     setSelectedFolder(obj);
-  }
+  };
 
   const [taskResult, setTaskResult] = useState(tasks);
-  const [notesResult, setNotesResult] = useState(notes); 
-  // REGISTER EVERY LETTER FROM THE INPUT FIELD
+  const [notesResult, setNotesResult] = useState(notes);
   const [search, setSearch] = useState("");
   const searcher = (e) => {
     setSearch(e.target.value);
-    setFolderId(""); // REMOVES ANY OPEN FOLDER OR ID TO PREVENT ERRORS
+    setFolderId("");
   };
 
-  // MODIFIES THE CONTAINER TO SHOW NOTES OR TASKS BASED ON USER SEARCH INPUT IN REAL TIME
-
   useEffect(() => {
-    if(!notes || !tasks) return;
+    if (!notes || !tasks) return;
 
     const results = !search
       ? notes
@@ -220,58 +194,43 @@ export const MainContextProvider = (props) => {
     setTaskResult(resultsTasks);
   }, [search, notes, tasks, updater]);
 
-  ////
-
-  
-    // FOR SELECTED FOLDER, IT FETCHES THE CORRESPONDING NOTES DEPENDING ON THEIR "linkedNotes" ARRAY
-
-
   useEffect(() => {
-    showFolderNotes(false, folderId); //USES THE ID 
-  }, [updatedInFolder, folderId]); // IT TRIGGERS IF "updatedInFolder" IS MODIFIED
-
-  //CHANGE COLOR THEMES and STYLES
+    showFolderNotes(false, folderId);
+  }, [updatedInFolder, folderId]);
 
   const [theme, setTheme] = useLocalStorage("theme", "Light");
 
   const handleOptionTheme = (event) => {
-    const result = stylesController.handleColorTheme(event, setTheme);
+    stylesController.handleColorTheme(event, setTheme);
     return;
   };
 
-  // MODIFICAR DINAMICAMENTE EL TAMAÑO DE LAS FUENTES
-
-  const [fontSize, setFontSize] = useLocalStorage("fontSize","text-[18px]");
+  const [fontSize, setFontSize] = useLocalStorage("fontSize", "text-[18px]");
   const [valueFont, setValueFont] = useLocalStorage("valueFont", "Medium");
 
   const fontSizes = (size) => {
-    const result = stylesController.handleFontSize(
-      size,
-      setValueFont,
-      setFontSize
-    );
+    stylesController.handleFontSize(size, setValueFont, setFontSize);
     return;
   };
 
-  const [designl, setListType] = useLocalStorage("designStyle","grid grid-cols-2 grid-d");
+  const [designl, setListType] = useLocalStorage(
+    "designStyle",
+    "grid grid-cols-2 grid-d"
+  );
   const [designValue, setValueList] = useLocalStorage("valueList", "Grid");
 
   const designList = (e) => {
-    const result = stylesController.handleDesignList(
-      e,
-      setValueList,
-      setListType
-    );
+    stylesController.handleDesignList(e, setValueList, setListType);
     return;
   };
 
   useEffect(() => {
     if (theme === "Dark") {
       document.documentElement.classList.add("dark");
-  } else {
+    } else {
       document.documentElement.classList.remove("dark");
-  }
-  }, [])
+    }
+  }, []);
 
   return (
     <MainContext.Provider
