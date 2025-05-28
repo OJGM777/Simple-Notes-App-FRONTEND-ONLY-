@@ -1,0 +1,71 @@
+[
+  { 
+    "id": "a0",
+    "titulo": "tareas 1",
+    "descripcion": "Esta es la descripción del oasdadasdbjeto 1.",
+    "length": "sepa",
+    "date": "separrrsss"
+  },
+  {
+    "id": "a1",
+    "titulo": "tarea 2",
+    "descripcion": "Esta es la descripción del objeto 2.",
+    "length": "sepa",
+    "date": "separrr"
+  },
+  {
+    "id": "a2",
+    "titulo": "comida gato",
+    "descripcion": "Esta es la descripción del objeto 3.",
+    "length": "sepa",
+    "date": "separrr"
+  }, {
+    "id": "a3",
+    "titulo": "limpiar la casa",
+    "descripcion": "Esta es la descripción del objeto 4.",
+    "length": "sepa",
+    "date": "2024-10-05"
+  },
+  {
+    "id": "a4",
+    "titulo": "hacer la compra",
+    "descripcion": "Esta es la descripción del objeto 5.",
+    "length": "sepa",
+    "date": "2024-10-06"
+  },
+  {
+    "id": "a5",
+    "titulo": "leer un libro",
+    "descripcion": "Esta es la descripción del objeto 6.",
+    "length": "sepa",
+    "date": "2024-10-07"
+  },
+  {
+    "id": "a6",
+    "titulo": "ejercicio en el parque",
+    "descripcion": "Esta es la descripción del objeto 7.",
+    "length": "sepa",
+    "date": "2024-10-08"
+  },
+  {
+    "id": "a7",
+    "titulo": "estudiar para el examen",
+    "descripcion": "Esta es la descripción del objeto 8.",
+    "length": "sepa",
+    "date": "2024-10-09"
+  },
+  {
+    "id": "a8",
+    "titulo": "preparar cena",
+    "descripcion": "Esta es la descripción del objeto 9.",
+    "length": "sepa",
+    "date": "2024-10-10"
+  },
+  {
+    "id": "a9",
+    "titulo": "organizar el escritorio",
+    "descripcion": "Esta es la descripción del objeto 10.",
+    "length": "sepa",
+    "date": "2024-10-11"
+  }
+]
