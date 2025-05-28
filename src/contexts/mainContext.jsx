@@ -156,7 +156,6 @@ export const MainContextProvider = (props) => {
     setCheckedTask([]);
   };
 
-  ///
 
   // FUNCTIONS FOR FOLDERS
 
