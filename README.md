@@ -34,6 +34,12 @@ The main tecnologies and libraries used in this version are:
   <li>REACT ICONS (for Dates)</li>
 </ul>
 
+In this project i wanted to try some new libraries, that's why i was using FRAMER MOTION, so this is my first time using this Library. I wanted to simplify the process of adding animation as fast as possible so that's why i choose this library. 
+
+![image](https://github.com/user-attachments/assets/6eaa1c98-ceec-48a5-aed0-afb586444175)
+
+(IF YOU FOUND ANY BUG OR PROBLEM WITH THE USAGE OF THIS LIBRARY PLEASE LET ME KNOW I WILL BE GLAD TO READ YOU ;) )
+
 This Version also has a Settings window where you can change the font and toggle the view (light and dark mode).
 
 There is also a section where you can find all your checked tasks in case that you want to return one of them to the pending tasks section.
