@@ -76,7 +76,7 @@ const Tasks = () => {
           <input
           id="searchBarTask"
             type="text"
-            placeholder="Buscar Tareas"
+            placeholder="Search Tasks"
             className={`w-[80%] rounded-full ${fontSize} p-2 mt-2 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] dark:bg-[#1f1f1f] text-[#7c7c7c]`}
             onChange={(e) => searcher(e)}
           />
