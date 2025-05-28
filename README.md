@@ -1,5 +1,7 @@
 # Simple-Notes-App (FRONTEND ONLY)
-This is a Note app that will include a note section and a Tasks section.
+This is a Note app that includes a note section and a Tasks section.
+
+!!!!THE PORPUSE OF THIS EARLY VERSION IS TO GIVE A SIMPLER CRUD APP IN CASE THAT SOMEONE WANTS TO DOWNLOAD IT AS A SIMPLE EXAMPLE ABOUT WHAT TO DO AND NOT DO AND ALSO REFLECT MY HISTORY AND (MAYBE) IMPROVEMENT AS A DEVELOPER.
 
 This version of the Notes App only has all the Frontend code, it means that this repository does not have any kind of code related to the backend, everything in this Repo is only pure front-end;
 There will be another version of this app with new tecnologies and features as:
