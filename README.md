@@ -14,7 +14,6 @@ This version of the Notes App only has all the Frontend code, it means that this
 There will be another version of this app with new tecnologies and features as:
 
 <ul>
-  <li>REACT REDUX AS A STATE MANAGER</li>
   <li>BACKEND FUNCTIONS</li>
   <li>COLLABORATIVE LISTS</li>
   <li>PROFILES</li>
